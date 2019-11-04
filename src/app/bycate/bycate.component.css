@@ -1,0 +1,61 @@
+#header{
+    height: 90px;
+    width: 100%;
+    background-color: gray;
+    text-align: center;
+}
+
+#footer{
+    height: 40px;
+    width: 100%;
+    background-color: rgb(168, 20, 20);
+    font-size: 12px;
+    text-align: center;
+    float: left;
+}
+
+.theLeft{
+    width: 20%;
+    background-color: greenyellow;
+    height: 1065px;
+    float: left;
+    border-radius: 4px 4px;
+}
+
+#links , #categories, #templink{
+    margin-left: 15px;
+
+}
+#ulhead li a{
+    list-style: none;
+    color: black;
+
+}
+#ulhead{
+    list-style: none;
+}
+
+
+.theRight{
+    width: 80%;
+    background-color: rgb(129, 158, 85);
+    float: left;
+
+}
+
+#image1{
+    width: 99%;
+    padding-left: 0;
+    margin: 0 auto;
+    border-radius: 4px 4px;
+}
+.row{
+    background-color: rgb(192, 187, 189);
+    border-radius: 4px 4px;
+    padding-top:0px;
+    margin-top: 12px;
+}
+.col-3{
+    padding: 0;
+}
+

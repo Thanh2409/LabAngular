@@ -1,0 +1,54 @@
+<div class="container">
+    <h3 class="text-center">Them Sinh Vien</h3>
+    <form>
+        <div class="form-group">
+            <label>Ho Va Ten</label>
+            <input type="text" class="form-control" [(ngModel)]="formStudent.fullName"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group">
+            <label>Ngay Sinh</label>
+            <input type="date" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label>Diem</label>
+            <input type="number" class="form-control" [(ngModel)]="formStudent.mark"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+        <div *ngIf="!showFormEdit">
+            <button class="btn btn-info form-control" id="bt">Them</button>
+            <button class="btn btn-danger form-control" id="bt">Huy</button>
+        </div>
+        <div *ngIf="showFormEdit">
+            <button class="btn btn-info form-control" id="bt">Luu</button>
+            <button class="btn btn-danger form-control" id="bt">Huy</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ho Va Ten</th>
+                    <th>Ngay Sinh</th>
+                    <th>Diem</th>
+                    <th>Xep Loai</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of students">
+                    <td><strong>{{p.id}}</strong></td>
+                    <td>{{p.fullName}}</td>
+                    <td>{{p.birthday | date: 'MM-dd-yyyy'}}</td>
+                    <td>{{p.mark}}</td>
+                    <td>{{gradeStudent(p)}}</td>
+                    <td *ngIf="!showFormEdit">
+                        <button class="btn btn-info" (click)="loadDataToEdit(p)">Sua</button>
+                        <button class="btn btn-danger" style="margin-left: 10px;">Xoa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </form>
+
+</div>

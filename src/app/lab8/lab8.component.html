@@ -1,0 +1,60 @@
+<div class="container">
+
+
+    <div class="container" id="header">
+        <h2> My Shop</h2>
+    </div>
+
+
+    <div class="theLeft">
+        <div id="links">
+            <h4>Links</h4>
+            <ul id="ulhead">
+                <li>
+                    View Cart
+                </li>
+                <li>
+                    Login/Register
+                </li>
+                <li [routerLink]="['/lab08']">Home</li>
+            </ul>
+        </div>
+        <div id="ulcate">
+            <h4>Categories</h4>
+            <ul id="ulhead" *ngFor= "let a of categories">
+                <li [routerLink]="['/bycate',a.id]">
+                   {{a.catename}}
+                </li>
+            </ul>
+        </div>
+        <div id="templink">
+            <h4>Temp Link</h4>
+            <ul id="ulhead">
+                <li>
+                    Admin
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="theRight">
+        
+        <div class="card">
+            <div class="card-header text-center">
+                <strong >Product</strong>
+            </div>
+            <div class="card-body"  >
+                <div class="row" *ngFor="let p of dulieu">
+                    <div class="col col-3" >
+                        <img src="../assets/images/{{p.image}}" id="image1">
+                    </div>
+                    <div class="col col-9">
+                        <a [routerLink]="['/detaillab8',p.id]">{{p.productname}}</a>
+                        <p><strong>Price:</strong>{{p.price}}</p>
+                        <p>{{p.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
